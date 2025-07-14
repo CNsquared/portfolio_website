@@ -2,21 +2,21 @@ const projects = [
     {
         title: "Creating Embedding Spaces of Short Form Messages for Authorship Verification",
         description: "The deep learning approach is a biBERT Siamese model that compares SVM-enhanced representations of each text via distance, and the statistical learning approach uses an SVM ensemble to predict the most likely author of each text, optionally comparing either the predicted label or the probability distribution. We find that the deep learning approach provides much better accuracy without a significant increase in prediction time, while the statistical learning approach takes significantly less time to train.",
-        technologies: ["Python", "PyTorch", "Scikit-learn", "NumPy", "Pandas"],
+        technologies: ["BERT", "Siamese Networks", "SVM", "Embedding Spaces"],
         link: "assets/Creating Embedding Spaces of Short Form Messages for Authorship Verification.pdf",
         image: "assets/images/AV/embedding_spaces_preview.png"
     },
     {
-        title: "Improving Authorship Attribution with Transformer Architectures",
-        description: "This project explores the use of transformer-based models for authorship attribution tasks, achieving state-of-the-art results on short-form text datasets.",
-        technologies: ["Python", "TensorFlow", "Transformers", "Hugging Face"],
+        title: "Online Messaging Authorship Analysis with Doc2Vec and TFIDF",
+        description: "‘lol,’ ‘LOL,’ ‘Lol,’ or opting for ‘haha’—the internet and the screens that separate us strip away many social cues that humans have evolved to pick up on. Consequently, individuals try to convey their messages through alternative means, whether it's through capitalization, emojis, or even strings like ‘jkflasjdfl.’ This paper aims to explore these tendencies, examining just how unique our texting styles truly are. The objective is to investigate whether these differences can be leveraged to classify the author of a particular message. Using Doc2Vec, we strive to capture both the potential syntax and meaning of messages. Additionally, TF-IDF is employed to identify the rarity of certain words, helping us pinpoint unique vocabularies of individuals. Furthermore, we gather additional heuristic features from the messages. Finally, an SVM is utilized to combine all these features and classify the messages.",
+        technologies: ["Doc2Vec", "TF-IDF", "SVM", "Feature Selection"],
         link: "assets/Online Messaging Authorship Analysis with Doc2Vec and TFIDF.pdf",
         image: "assets/images/AV/Doc2Vec_and_TFIDF.png"
     },
     {
-        title: "Statistical Learning for Authorship Verification",
-        description: "A statistical approach using SVM ensembles and dimensionality reduction techniques to verify authorship across large datasets.",
-        technologies: ["Python", "Scikit-learn", "Pandas", "Matplotlib"],
+        title: "Who This? Authorship Classification of Short Form Text Messages",
+        description: "In this paper, we attempt to use a combination of transformers, a GRU model, and an LDA model to classify short text messages from different users. By analyzing the content, syntax, and topics of messages, we hope to be able to successfully predict which user sent which message from a pool of 10 potential authors. After fine-tuning the models and pre-processing data in different ways, we achieved a suitable performance compared to other research in the field. This paper best helps us understand trends in instant messaging and how people communicate with each other using the internet.",
+        technologies: ["Transformers", "GRU", "LDA", "Text Classification"],
         link: "assets/Who This Authorship Classification of Short Form Text Messages.pdf",
         image: "assets/images/AV/ensemble.png"
     }
@@ -143,7 +143,7 @@ const modalIframe = resumeModal.querySelector('iframe');
 
 // Function to open any PDF in the modal
 function openPDFInModal(pdfUrl) {
-    modalIframe.src = pdfUrl + "#zoom=110";
+    modalIframe.src = pdfUrl + "#zoom=100";
     resumeModal.style.display = 'block';
 }
 
@@ -181,16 +181,16 @@ window.addEventListener('click', e => {
 // Bio profile switcher
 const bioData = [
     {
-        title: "Hi, I'm Alex. A machine learning researcher focused on NLP!",
-        description: "I specialize in natural language processing and deep learning. My research focuses on authorship verification, text classification, and developing novel embedding techniques for short-form text analysis."
+        title: "Hi, I'm Alex. A climber and grappler!",
+        description: "Outside of work, I have a passion for rock climbing and brazilian jiu-jitsu. While these sports may seem very different, to me, they are both just physical version of problem solving. Wether its determining the right route up the rock or the right path to a submission, I love a good puzzle and figuring it out."
     },
     {
         title: "Hi, I'm Alex. A motivated and problem-solving oriented machine learning engineer!",
-        description: "I have been programming and working on projects since 2018. I have experience in both app development and data science. But my main passion and work is in data science and machine learning. I have worked on various projects including image classification, natural language processing, and time series forecasting. Outside of work, I have a passion for rock climbing and brazilian jiu-jitsu. And despite my 13 allergies I always like to find new food."
+        description: "I have been programming and working on projects since 2018. I have experience in both app development and data science. But my main passion and work is in data science and machine learning. I have worked on various projects including image classification, natural language processing, and time series forecasting. "
     },
     {
-        title: "Hi, I'm Alex. A full-stack developer with a passion for AI!",
-        description: "I love building end-to-end applications that leverage machine learning. From web development to mobile apps, I enjoy creating user-friendly interfaces that make complex AI accessible to everyone."
+        title: "Hi, I'm Alex. Forever a student and always learning!",
+        description: "I got my formal education and the University of California at San Diego, where I earned a B.S. in Computer Engineering. I also recieved engineering honors. UCSD is also where I got my M.S. in electrical engineering with a spec. in machine learning and data science. Even though my acadmeic education may be over for now, I always am trying to learn and expand my skillset. People say that I am a fast learner so I might as well learn as much as I can!"
     }
 ];
 

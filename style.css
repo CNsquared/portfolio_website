@@ -10,7 +10,7 @@ body {
   
     --dark-background: #253a52;
     --dark-primary: #FFFFE3;
-    --dark-link: #A9FE75;
+    --dark-link: #b4b8a676;
   
     --light-background: #253a52;
     --light-primary: #253a52;
@@ -94,6 +94,7 @@ header nav li a {
     gap: 2rem;
     align-items: center;
     margin: 2rem 0;
+    height: 600px;
 }
 
 .pfp-switcher {
@@ -210,8 +211,15 @@ article a {
 }
   
 article li {
+    list-style: none;
+    background-color: var(--dark-link);
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    display: inline-block;
+    margin-right: 1rem;
     margin-block-end: 0.5rem;
 }
+
   
 article .article-img {
     width: 512px;
