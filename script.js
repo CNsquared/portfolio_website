@@ -48,10 +48,6 @@ document.getElementById("next-project").addEventListener("click", () => {
 // Initialize the first project
 updateProject();
 
-document.querySelector('.btn').addEventListener('click', function (event) {
-    event.preventDefault(); // Prevent default anchor behavior
-    document.querySelector('#recent-work-button').scrollIntoView({ behavior: 'smooth' });
-});
 
 document.querySelector('a[href="#recent-work"]').addEventListener('click', function (event) {
     event.preventDefault(); // Prevent default anchor behavior
@@ -162,4 +158,90 @@ window.addEventListener('click', e => {
 });
 
 
+// Bio profile switcher
+const bioData = [
+    {
+        title: "Hi, I'm Alex. A machine learning researcher focused on NLP!",
+        description: "I specialize in natural language processing and deep learning. My research focuses on authorship verification, text classification, and developing novel embedding techniques for short-form text analysis."
+    },
+    {
+        title: "Hi, I'm Alex. A motivated and problem-solving oriented machine learning engineer!",
+        description: "I have been programming and working on projects since 2018. I have experience in both app development and data science. But my main passion and work is in data science and machine learning. I have worked on various projects including image classification, natural language processing, and time series forecasting. Outside of work, I have a passion for rock climbing and brazilian jiu-jitsu. And despite my 13 allergies I always like to find new food."
+    },
+    {
+        title: "Hi, I'm Alex. A full-stack developer with a passion for AI!",
+        description: "I love building end-to-end applications that leverage machine learning. From web development to mobile apps, I enjoy creating user-friendly interfaces that make complex AI accessible to everyone."
+    }
+];
+
+let currentBioIndex = 1; // Start with middle profile
+
+// Apply bio data to all faces
+function updateAllBios(index) {
+    const bioTitles = document.querySelectorAll('#bio-title');
+    const bioDescriptions = document.querySelectorAll('#bio-description');
+    const bioTexts = document.querySelectorAll('.bio-text');
+    
+    // Add changing class for fade effect
+    bioTexts.forEach(text => text.classList.add('changing'));
+    
+    setTimeout(() => {
+        bioTitles.forEach(title => {
+            title.textContent = bioData[index].title;
+        });
+        bioDescriptions.forEach(desc => {
+            desc.textContent = bioData[index].description;
+        });
+        
+        // Remove changing class
+        bioTexts.forEach(text => text.classList.remove('changing'));
+    }, 150);
+}
+
+// Handle profile switching on all faces
+function initProfileSwitchers() {
+    const switchers = document.querySelectorAll('.pfp-switcher');
+    
+    switchers.forEach(switcher => {
+        const profiles = switcher.querySelectorAll('.pfp');
+        
+        profiles.forEach((profile, index) => {
+            profile.addEventListener('click', () => {
+                if (index === currentBioIndex) return; // Already selected
+                
+                // Update all switchers
+                switchers.forEach(otherSwitcher => {
+                    const otherProfiles = otherSwitcher.querySelectorAll('.pfp');
+                    
+                    // Remove current classes
+                    otherProfiles.forEach(p => {
+                        p.classList.remove('pfp-main', 'pfp-left', 'pfp-right');
+                    });
+                    
+                    // Apply new classes based on selected index
+                    otherProfiles.forEach((p, i) => {
+                        const dataIndex = parseInt(p.dataset.index);
+                        if (dataIndex === index) {
+                            p.classList.add('pfp-main');
+                        } else if ((dataIndex < index && dataIndex === index - 1) || 
+                                 (index === 0 && dataIndex === 2)) {
+                            p.classList.add('pfp-left');
+                        } else {
+                            p.classList.add('pfp-right');
+                        }
+                    });
+                });
+                
+                currentBioIndex = index;
+                updateAllBios(index);
+            });
+        });
+    });
+}
+
+// Initialize after DOM loads
+document.addEventListener('DOMContentLoaded', () => {
+    initProfileSwitchers();
+    updateAllBios(currentBioIndex); // Set initial bio
+});
 

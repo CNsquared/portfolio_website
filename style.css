@@ -88,18 +88,67 @@ header nav li a {
   color: var(--primary);
 }
 
+/* Bio section with 3-profile switcher */
 .bio {
     display: flex;
+    gap: 2rem;
     align-items: center;
-    padding-block-end: 4rem;
+    margin: 2rem 0;
 }
-  
-.bio .pfp {
-    margin-inline-end: 4rem;
-    width: 320px;
-    min-width: 320px;
 
-    border-radius: 160px;
+.pfp-switcher {
+    position: relative;
+    width: 450px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pfp {
+    position: absolute;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.pfp-main {
+    width: 220px;
+    height: 220px;
+    z-index: 3;
+    transform: scale(1);
+}
+
+.pfp-left {
+    width: 160px;
+    height: 160px;
+    z-index: 2;
+    transform: translateX(-120px) scale(0.8);
+    opacity: 0.7;
+}
+
+.pfp-right {
+    width: 160px;
+    height: 160px;
+    z-index: 2;
+    transform: translateX(120px) scale(0.8);
+    opacity: 0.7;
+}
+
+.bio-text {
+    flex: 1;
+    transition: all 0.3s ease;
+}
+
+.bio-text h2,
+.bio-text p {
+    transition: opacity 0.3s ease;
+}
+
+.bio-text.changing {
+    opacity: 0.7;
 }
   
 @media (max-width: 1024px) {
@@ -223,6 +272,11 @@ article .article-img {
       min-width: 100%;
       margin-inline-start: 0;
       margin-block-start: 2rem;
+    }
+
+    .content {
+      flex-direction: column;
+      align-items: center;
     }
 }
 
