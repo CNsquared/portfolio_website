@@ -48,26 +48,24 @@ document.getElementById("next-project").addEventListener("click", () => {
 // Initialize the first project
 updateProject();
 
-
 document.querySelector('a[href="#recent-work"]').addEventListener('click', function (event) {
-    event.preventDefault(); // Prevent default anchor behavior
-    document.querySelector('#recent-work-button').scrollIntoView({ behavior: 'smooth' });
+    event.preventDefault();
+    document.querySelector('#recent-work').scrollIntoView({ behavior: 'smooth' });
 });
-
 
 const miscProjects = [
     {
         title: "Miscellaneous Research Project 1",
         description: "This project explores advanced statistical methods for data analysis.",
         technologies: ["Python", "R", "Matplotlib"],
-        link: "#",
+        link: "assets/misc-project1.pdf",
         image: "assets/images/misc/project1.png"
     },
     {
         title: "Miscellaneous Research Project 2",
         description: "A study on the application of machine learning in environmental science.",
         technologies: ["Python", "TensorFlow", "Pandas"],
-        link: "#",
+        link: "assets/misc-project2.pdf",
         image: "assets/images/misc/project2.png"
     }
 ];
@@ -77,14 +75,14 @@ const softwareProjects = [
         title: "Software Development Project 1",
         description: "Developed a web application for task management using React and Node.js.",
         technologies: ["React", "Node.js", "MongoDB"],
-        link: "#",
+        link: "assets/software-project1.pdf",
         image: "assets/images/software/project1.png"
     },
     {
         title: "Software Development Project 2",
         description: "Created a mobile app for fitness tracking using Flutter.",
         technologies: ["Flutter", "Dart", "Firebase"],
-        link: "#",
+        link: "assets/software-project2.pdf",
         image: "assets/images/software/project2.png"
     }
 ];
@@ -138,25 +136,47 @@ document.getElementById("next-software").addEventListener("click", () => {
 updateMiscProject();
 updateSoftwareProject();
 
-
-const resumeLink  = document.getElementById('resume-link');
+// UPDATED MODAL FUNCTIONALITY - Handle all PDF links
 const resumeModal = document.getElementById('resume-modal');
+const resumeClose = document.getElementById('resume-close');
+const modalIframe = resumeModal.querySelector('iframe');
 
+// Function to open any PDF in the modal
+function openPDFInModal(pdfUrl) {
+    modalIframe.src = pdfUrl + "#zoom=110";
+    resumeModal.style.display = 'block';
+}
+
+// Handle resume link
+const resumeLink = document.getElementById('resume-link');
 resumeLink.addEventListener('click', e => {
-
-  e.preventDefault();
-  resumeModal.style.display = 'block';
+    e.preventDefault();
+    openPDFInModal("assets/Alex Oshima's Resume.pdf");
 });
 
+// Handle all project PDF links
+document.addEventListener('click', (e) => {
+    const target = e.target.closest('a');
+    if (target && target.href && target.href.endsWith('.pdf')) {
+        e.preventDefault();
+        const pdfUrl = target.getAttribute('href');
+        openPDFInModal(pdfUrl);
+    }
+});
 
-
-// click outside content closes modal
-window.addEventListener('click', e => {
-  if (e.target === resumeModal) {
+// Close modal functionality
+resumeClose.addEventListener('click', () => {
     resumeModal.style.display = 'none';
-  }
+    modalIframe.src = ''; // Clear the iframe when closing
 });
 
+// Click outside content closes modal
+window.addEventListener('click', e => {
+    if (e.target === resumeModal) {
+        resumeModal.style.display = 'none';
+        modalIframe.src = ''; // Clear the iframe when closing
+    }
+});
 
 // Bio profile switcher
 const bioData = [
@@ -244,4 +264,3 @@ document.addEventListener('DOMContentLoaded', () => {
     initProfileSwitchers();
     updateAllBios(currentBioIndex); // Set initial bio
 });
-
