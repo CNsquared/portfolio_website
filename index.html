@@ -1,36 +1,28 @@
-
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
     <title>Alex Oshima</title>
-    <meta name = "viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Sora:wght@700&family=Work+Sans:ital,wght@0,400;0,700;1,600&display=swap">
     <link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free@6.2.0/css/brands.min.css">
     <link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free@6.2.0/css/solid.min.css">
     <link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free@6.2.0/css/fontawesome.min.css">
     
-    
     <link rel="stylesheet" href="style.css">
-
-
 </head>
 
-
-
 <body>
-    
-    <div class = "main-page">
+    <div class="main-page">
         <header>
             <nav>
                 <h1>Alex Oshima</h1>
                 <ul>
-                <li><a href="#recent-work">Work</a></li>
-                <li><a href="assets/Alex Oshima's Resume.pdf" id="resume-link">Resume</a></li>
-                <li><a href="#footer">Contact</a></li>
+                    <li><a href="#recent-work">Work</a></li>
+                    <li><a href="assets/Alex Oshima's Resume.pdf" id="resume-link">Resume</a></li>
+                    <li><a href="#footer">Contact</a></li>
                 </ul>
             </nav>
-
         </header>
 
         <section class="bio">
@@ -50,10 +42,10 @@
         </section>
 
         <section class="recent-work" id="recent-work">
-            <h2> Recent Work</h2>
+            <h2>Recent Work</h2>
 
             <article>
-                <div class = "content">
+                <div class="content">
                     <div class="project-info">
                         <h3>Authorship Verification Research</h3>
                         <div class="project-header">
@@ -71,68 +63,56 @@
                             <li>Pandas</li>
                         </ul>
                     </div>
-                    <a  id="project-link" href="#" target="_blank">
+                    <a id="project-link" href="#" target="_blank">
                         <img id="project-image" class="paper-preview" src="assets/images/AV/embedding_spaces_preview.png" alt="Authorship Verification Project">
                     </a>
                 </div>
-
 
                 <div class="project-navigation">
                     <button id="prev-project">Previous</button>
                     <button id="next-project">Next</button>
                 </div>
-
             </article>
 
             <article>
-                <div class = "content">
+                <div class="content">
                     <div class="project-info">
                         <h3>Miscellaneous Research</h3>
                         <div class="project-header">
-                            <h4 id="misc-title">sadfasdfasdf</h4>
+                            <h4 id="misc-title">Arctic Sea Ice Motion Prediction</h4>
                         </div>
                         <p id="misc-description">
-                            The deep learning approach is a biBERT Siamese model that compares SVM-enhanced representations of each text via distance, and the statistical learning approach uses an SVM ensemble to predict the most likely author of each text, optionally comparing either the predicted label or the probability distribution. We find that the deep learning approach provides much better accuracy without a significant increase in prediction time, while the statistical learning approach takes significantly less time to train.
+                            Arctic sea ice motion prediction is vital for maritime navigation as climate change impacts Arctic conditions. This work reproduces and extends the machine learning method from Hoffman et al. [2023] for daily sea ice motion forecasting.
                         </p>
                         <h5>Technologies Used</h5>
                         <ul id="misc-technologies">
                             <li>Python</li>
                             <li>PyTorch</li>
-                            <li>Scikit-learn</li>
-                            <li>NumPy</li>
-                            <li>Pandas</li>
+                            <li>CNN</li>
+                            <li>Linear Regression</li>
                         </ul>
                     </div>
-                    <a  id="misc-link" href="#" target="_blank">
-                        <img id="misc-image" class="paper-preview" src="assets/images/AV/embedding_spaces_preview.png" alt="Authorship Verification Project">
+                    <a id="misc-link" href="#" target="_blank">
+                        <img id="misc-image" class="paper-preview" src="assets/images/sea_ice.png" alt="Sea Ice Research Project">
                     </a>
                 </div>
-
-
-
             </article>
 
-          
-
-            
             <article>
                 <div class="project-info">
                     <h3>Software Development</h3>
                     <div class="project-header">
-                        <h4 id="software-title">Creating Em</h4>
+                        <h4 id="software-title">This Website!</h4>
                     </div>
                     <p id="software-description">
-                        The deep learning approach is a biBERT Siamese model that compares SVM-enhanced representations of each text via distance, and the statistical learning approach uses an SVM ensemble to predict the most likely author of each text, optionally comparing either the predicted label or the probability distribution. We find that the deep learning approach provides much better accuracy without a significant increase in prediction time, while the statistical learning approach takes significantly less time to train.
+                        Written from scratch using JavaScript, HTML and CSS. Hosted on github pages.
                     </p>
                     <h5>Technologies Used</h5>
                     <ul id="software-technologies">
-                        <li>Python</li>
-                        <li>PyTorch</li>
-                        <li>Scikit-learn</li>
-                        <li>NumPy</li>
-                        <li>Pandas</li>
+                        <li>JavaScript</li>
+                        <li>HTML</li>
+                        <li>CSS</li>
                     </ul>
-                    
                 </div>
 
                 <div class="project-navigation">
@@ -140,50 +120,45 @@
                     <button id="next-software">Next</button>
                 </div>
             </article>
-
-            
-
         </section>
 
         <footer id="footer">
-
             <h3>Connect with Me</h3>
             <p>Feel free to reach out to me at aoshima@ucsd.edu</p>
 
             <ul>
-              <li>
-                <a href="https://www.linkedin.com/in/alex-oshima-70358a237/" target="_blank">
-                  LinkedIn
-                  <span class="link-icon">
-                    <i class="fa-brands fa-linkedin"></i>
-                  </span>
-                </a>
-              </li>
-              
-              <li>
-                <a href="https://github.com/cnsquared">
-                  GitHub
-                  <span class="link-icon">
-                    <i class="fa-brands fa-github"></i>
-                  </span>
-                </a>
-              </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/alex-oshima-70358a237/" target="_blank">
+                        LinkedIn
+                        <span class="link-icon">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/cnsquared">
+                        GitHub
+                        <span class="link-icon">
+                            <i class="fa-brands fa-github"></i>
+                        </span>
+                    </a>
+                </li>
             </ul>
             <p class="copywright">© 2025 Alex Oshima</p>
-          </footer>
-
+        </footer>
     </div>
 
     <div id="resume-modal" class="modal">
         <div class="modal-content">
-          <iframe src="assets/Alex Oshima's Resume.pdf#zoom=100" frameborder="0"></iframe>
+            <iframe src="assets/Alex Oshima's Resume.pdf#zoom=100" frameborder="0"></iframe>
+            <div class="pdf-error" id="pdf-error">
+                <h3>Unable to Display PDF</h3>
+                <p>Sorry! Your device or browser doesn't support viewing PDFs directly. You can download the file instead.</p>
+                <a href="#" class="btn" id="download-link" download>Download PDF</a>
+            </div>
         </div>
     </div>
 
-
     <script src="script.js"></script>
-
-   
-
 </body>
 </html>
