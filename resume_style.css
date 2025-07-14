@@ -1,0 +1,150 @@
+/* Variables & Base */
+:root {
+    --bg: #f4f6f8;
+    --paper: #fff;
+    --primary: #253a52;
+    --accent: #a1b1de;
+    --text: #333;
+    --section-gap: 2rem;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    padding: 1rem;
+    font-family: "Work Sans", sans-serif;
+    background-color: var(--primary);
+    color: var(--text);
+    line-height: 1.5;
+    max-width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+
+
+  }
+
+  .main-page {
+    padding: 0 2rem;
+    background-color: var(--bg);
+  }
+
+  nav,
+section {
+  border-block-end: 1px solid var(--primary);
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+header nav ul {
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+header nav li {
+  display: inline;
+  margin-inline-start: 1rem;
+  font-family: "Sora", sans-serif;
+  font-weight: 700;
+}
+
+header nav li a {
+  text-decoration: none;
+  color: var(--primary);
+}
+  
+  /* Header */
+  .header {
+    text-align: center;
+    margin-bottom: var(--section-gap);
+  }
+  
+  .header h1 {
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    font-size: 2.5rem;
+    color: var(--primary);
+  }
+  
+  .header .contact {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .header a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  
+  /* Sections */
+  section {
+    margin-bottom: var(--section-gap);
+  }
+  
+  section h2 {
+    font-family: "Sora", sans-serif;
+    font-size: 1.75rem;
+    color: var(--primary);
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 0.25rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Lists and Meta */
+  ul {
+    margin: 0;
+    padding-left: 1.25rem;
+  }
+  
+  .meta {
+    font-size: 0.9rem;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Jobs & Projects */
+  .job,
+  .project {
+    margin-bottom: 1rem;
+  }
+  
+  .job h3,
+  .project h3 {
+    margin: 0.5rem 0 0.25rem;
+    font-size: 1.25rem;
+    color: var(--primary);
+  }
+  
+  /* Skills */
+  .skill-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+  }
+  
+  .skill-list li {
+    background: var(--paper);
+    padding: 0.5rem;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+  
+  /* Footer */
+  .footer {
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--accent);
+    margin-top: var(--section-gap);
+  }
+  
