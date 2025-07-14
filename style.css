@@ -127,7 +127,7 @@ header nav li a {
     height: 160px;
     z-index: 2;
     transform: translateX(-120px) scale(0.8);
-    opacity: 0.7;
+    opacity: 0.6;
 }
 
 .pfp-right {
@@ -135,7 +135,7 @@ header nav li a {
     height: 160px;
     z-index: 2;
     transform: translateX(120px) scale(0.8);
-    opacity: 0.7;
+    opacity: 0.6;
 }
 
 .bio-text {
@@ -288,32 +288,63 @@ article .article-img {
     }
 }
 
-/* Modal overlay */
+/* Replace your existing modal styles with these enhanced versions */
+
+/* Modal overlay with smooth fade */
 .modal {
     display: none;
     position: fixed;
     z-index: 1000;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0,0,0,0.8);
-  }
-  /* White “popup” box */
-  .modal-content {
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    height: 100%;
+    background: rgba(0, 0, 0, 0);
+    transition: background-color 0.3s ease;
+    backdrop-filter: blur(2px);
+}
+
+.modal.show {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+/* Modal content with smooth scale animation */
+.modal-content {
     position: relative;
     max-width: 900px;
-    width: 80%; height: 80%;
-    margin: 5% auto;
-    border-radius: 8px;
+    width: 85%; 
+    height: 85%;
+    margin: 2.5% auto;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
     overflow: hidden;
-    padding: 0rem, 0rem, 1rem, 0rem;
+    padding: 0;
     box-sizing: border-box;
-  }
-  .modal-content iframe {
+    transform: scale(0.7);
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.modal.show .modal-content {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* Iframe styling */
+.modal-content iframe {
     width: 100%;
     height: 100%;
+    border: none;
+    border-radius: 16px;
     display: block;
-    margin: 0 auto;
-    align-items: center;
+}
+
+
+
+
+.modal-content iframe[src]:not([src=""]) + ::before {
+    display: none;
 }
 
 

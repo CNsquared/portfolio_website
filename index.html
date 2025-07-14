@@ -27,7 +27,7 @@
                 <ul>
                 <li><a href="#recent-work">Work</a></li>
                 <li><a href="assets/Alex Oshima's Resume.pdf" id="resume-link">Resume</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#footer">Contact</a></li>
                 </ul>
             </nav>
 
@@ -85,38 +85,41 @@
             </article>
 
             <article>
-                <div class="project-info">
-                    <h3>Miscellaneous Research</h3>
-                    <div class="project-header">
-                        <h4 id="misc-title">Creating Embedding Spaces of Short Form Messages for Authorship Verification</h4>
+                <div class = "content">
+                    <div class="project-info">
+                        <h3>Miscellaneous Research</h3>
+                        <div class="project-header">
+                            <h4 id="misc-title">sadfasdfasdf</h4>
+                        </div>
+                        <p id="misc-description">
+                            The deep learning approach is a biBERT Siamese model that compares SVM-enhanced representations of each text via distance, and the statistical learning approach uses an SVM ensemble to predict the most likely author of each text, optionally comparing either the predicted label or the probability distribution. We find that the deep learning approach provides much better accuracy without a significant increase in prediction time, while the statistical learning approach takes significantly less time to train.
+                        </p>
+                        <h5>Technologies Used</h5>
+                        <ul id="misc-technologies">
+                            <li>Python</li>
+                            <li>PyTorch</li>
+                            <li>Scikit-learn</li>
+                            <li>NumPy</li>
+                            <li>Pandas</li>
+                        </ul>
                     </div>
-                    <p id="misc-description">
-                        The deep learning approach is a biBERT Siamese model that compares SVM-enhanced representations of each text via distance, and the statistical learning approach uses an SVM ensemble to predict the most likely author of each text, optionally comparing either the predicted label or the probability distribution. We find that the deep learning approach provides much better accuracy without a significant increase in prediction time, while the statistical learning approach takes significantly less time to train.
-                    </p>
-                    <h5>Technologies Used</h5>
-                    <ul id="misc-technologies">
-                        <li>Python</li>
-                        <li>PyTorch</li>
-                        <li>Scikit-learn</li>
-                        <li>NumPy</li>
-                        <li>Pandas</li>
-                    </ul>
-                    <a id="misc-link" href="#" target="_blank">Github Repo</a>
+                    <a  id="misc-link" href="#" target="_blank">
+                        <img id="misc-image" class="paper-preview" src="assets/images/AV/embedding_spaces_preview.png" alt="Authorship Verification Project">
+                    </a>
                 </div>
-                <a href="#" target="_blank">
-                    <img id="misc-image" class="paper-preview" src="assets/images/AV/embedding_spaces_preview.png" alt="Miscellaneous Research Project">
-                </a>
-                <div class="project-navigation">
-                    <button id="prev-misc">Previous</button>
-                    <button id="next-misc">Next</button>
-                </div>
+
+
+
             </article>
+
+          
+
             
             <article>
                 <div class="project-info">
                     <h3>Software Development</h3>
                     <div class="project-header">
-                        <h4 id="software-title">Creating Embedding Spaces of Short Form Messages for Authorship Verification</h4>
+                        <h4 id="software-title">Creating Em</h4>
                     </div>
                     <p id="software-description">
                         The deep learning approach is a biBERT Siamese model that compares SVM-enhanced representations of each text via distance, and the statistical learning approach uses an SVM ensemble to predict the most likely author of each text, optionally comparing either the predicted label or the probability distribution. We find that the deep learning approach provides much better accuracy without a significant increase in prediction time, while the statistical learning approach takes significantly less time to train.
@@ -129,11 +132,9 @@
                         <li>NumPy</li>
                         <li>Pandas</li>
                     </ul>
-                    <a id="software-link" href="#" target="_blank">Github Repo</a>
+                    
                 </div>
-                <a href="#" target="_blank">
-                    <img id="software-image" class="paper-preview" src="assets/images/AV/embedding_spaces_preview.png" alt="Software Development Project">
-                </a>
+
                 <div class="project-navigation">
                     <button id="prev-software">Previous</button>
                     <button id="next-software">Next</button>
@@ -144,7 +145,7 @@
 
         </section>
 
-        <footer>
+        <footer id="footer">
 
             <h3>Connect with Me</h3>
             <p>Feel free to reach out to me at aoshima@ucsd.edu</p>
@@ -175,10 +176,9 @@
 
     <div id="resume-modal" class="modal">
         <div class="modal-content">
-          <span id="resume-close" class="close">&times;</span>
           <iframe src="assets/Alex Oshima's Resume.pdf#zoom=100" frameborder="0"></iframe>
         </div>
-      </div>
+    </div>
 
 
     <script src="script.js"></script>

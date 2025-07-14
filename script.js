@@ -54,34 +54,35 @@ document.querySelector('a[href="#recent-work"]').addEventListener('click', funct
 });
 
 const miscProjects = [
+
     {
-        title: "Miscellaneous Research Project 1",
-        description: "This project explores advanced statistical methods for data analysis.",
-        technologies: ["Python", "R", "Matplotlib"],
-        link: "assets/misc-project1.pdf",
-        image: "assets/images/misc/project1.png"
-    },
-    {
-        title: "Miscellaneous Research Project 2",
-        description: "A study on the application of machine learning in environmental science.",
-        technologies: ["Python", "TensorFlow", "Pandas"],
-        link: "assets/misc-project2.pdf",
-        image: "assets/images/misc/project2.png"
+        title: "Arctic Sea Ice Motion Prediction",
+        description: "Arctic sea ice motion prediction is vital for maritime navigation as climate change impacts Arctic conditions. This work reproduces and extends the machine learning method from Hoffman et al. [2023] for daily sea ice motion forecasting. We implement four models: Persistence (PS), Linear Regression (LR), CNN, and a novel uncertainty-weighted CNN. Using wind velocity, sea ice concentration, and prior-day ice velocity, we predict current sea ice motion. Our main contribution is an uncertainty-aware CNN that reduces the influence of high-uncertainty observations—common in coastal areas—by weighting them less in training. This improves performance in hazardous coastal regions, despite modest overall metric gains (correlation 0.7955 vs. 0.8023 baseline). Limited overall improvement reflects the dominance of low-uncertainty areas, where coastal gains are a small part of the domain. This work highlights the value of integrating data quality into geophysical ML, especially for critical applications needing strong performance in challenging regions.",
+        technologies: ["Python", "PyTorch", "CNN", "Linear Regression"],
+        link: "assets/sea_ice_forcasting.pdf",
+        image: "assets/images/sea_ice.png"
     }
 ];
 
 const softwareProjects = [
     {
-        title: "Software Development Project 1",
-        description: "Developed a web application for task management using React and Node.js.",
-        technologies: ["React", "Node.js", "MongoDB"],
+        title: "This Website!",
+        description: "Written from scratch using JavaScript, HTML and CSS. Hosted on github pages.",
+        technologies: ["JavaScript", "HTML", "CSS"],
         link: "assets/software-project1.pdf",
         image: "assets/images/software/project1.png"
     },
     {
-        title: "Software Development Project 2",
-        description: "Created a mobile app for fitness tracking using Flutter.",
-        technologies: ["Flutter", "Dart", "Firebase"],
+        title: "Discord Bot",
+        description: "Private discord multi-feature bot. Features include: Games, Chat, Moderation. Uses PyCord for the Discord API and Python for the backend logic. The bot is designed to enhance user engagement and provide a fun experience for server members. It learned how the members of the server spoke then imitated their speaking style",   
+        technologies: [ "PyCord", "Python", "NLP", "Reinforcement Learning"],
+        link: "assets/software-project2.pdf",
+        image: "assets/images/software/project2.png"
+    },
+    {
+        title: "Online Card Game",
+        description: "Created a Tarot Card multiplayer web game. One player hosts the game while another joins the room and plays in real time",
+        technologies: [ "JavaScript", "HTML", "CSS", "Node.js", "Socket.io"],
         link: "assets/software-project2.pdf",
         image: "assets/images/software/project2.png"
     }
@@ -107,20 +108,9 @@ function updateSoftwareProject() {
     document.getElementById("software-description").textContent = project.description;
     const technologiesList = document.getElementById("software-technologies");
     technologiesList.innerHTML = project.technologies.map(tech => `<li>${tech}</li>`).join("");
-    document.getElementById("software-link").href = project.link;
-    document.getElementById("software-image").src = project.image;
-    document.getElementById("software-image").alt = project.title;
+
 }
 
-document.getElementById("prev-misc").addEventListener("click", () => {
-    currentMiscIndex = (currentMiscIndex - 1 + miscProjects.length) % miscProjects.length;
-    updateMiscProject();
-});
-
-document.getElementById("next-misc").addEventListener("click", () => {
-    currentMiscIndex = (currentMiscIndex + 1) % miscProjects.length;
-    updateMiscProject();
-});
 
 document.getElementById("prev-software").addEventListener("click", () => {
     currentSoftwareIndex = (currentSoftwareIndex - 1 + softwareProjects.length) % softwareProjects.length;
@@ -141,12 +131,42 @@ const resumeModal = document.getElementById('resume-modal');
 const resumeClose = document.getElementById('resume-close');
 const modalIframe = resumeModal.querySelector('iframe');
 
-// Function to open any PDF in the modal
+
+// Function to open any PDF in the modal with smooth animation
 function openPDFInModal(pdfUrl) {
-    modalIframe.src = pdfUrl + "#zoom=100";
+    modalIframe.src = pdfUrl + "#zoom=110";
     resumeModal.style.display = 'block';
+    
+    // Trigger animation after display is set
+    setTimeout(() => {
+        resumeModal.classList.add('show');
+    }, 10);
 }
 
+// Close modal with smooth animation
+function closeModal() {
+    resumeModal.classList.remove('show');
+    
+    // Hide modal after animation completes
+    setTimeout(() => {
+        resumeModal.style.display = 'none';
+        modalIframe.src = ''; // Clear the iframe when closing
+    }, 50);
+}
+
+// Updated click outside functionality
+window.addEventListener('click', e => {
+    if (e.target === resumeModal) {
+        closeModal();
+    }
+});
+
+// Add escape key functionality
+document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && resumeModal.style.display === 'block') {
+        closeModal();
+    }
+});
 // Handle resume link
 const resumeLink = document.getElementById('resume-link');
 resumeLink.addEventListener('click', e => {
@@ -164,11 +184,7 @@ document.addEventListener('click', (e) => {
     }
 });
 
-// Close modal functionality
-resumeClose.addEventListener('click', () => {
-    resumeModal.style.display = 'none';
-    modalIframe.src = ''; // Clear the iframe when closing
-});
+
 
 // Click outside content closes modal
 window.addEventListener('click', e => {
@@ -263,4 +279,13 @@ function initProfileSwitchers() {
 document.addEventListener('DOMContentLoaded', () => {
     initProfileSwitchers();
     updateAllBios(currentBioIndex); // Set initial bio
+});
+
+
+document.querySelector('a[href="#footer"]').addEventListener('click', function (event) {
+    event.preventDefault();
+    window.scrollTo({ 
+        top: document.body.scrollHeight, 
+        behavior: 'smooth' 
+    });
 });
