@@ -65,19 +65,20 @@ const miscProjects = [
 ];
 
 const softwareProjects = [
-    {
-        title: "This Website!",
-        description: "Written from scratch using JavaScript, HTML and CSS. Hosted on github pages.",
-        technologies: ["JavaScript", "HTML", "CSS"],
-        link: "assets/software-project1.pdf",
-        image: "assets/images/software/project1.png"
-    },
+    
     {
         title: "Discord Bot",
         description: "Private discord multi-feature bot. Features include: Games, Chat, Moderation. Uses PyCord for the Discord API and Python for the backend logic. The bot is designed to enhance user engagement and provide a fun experience for server members. It learned how the members of the server spoke then imitated their speaking style",   
         technologies: [ "PyCord", "Python", "NLP", "Reinforcement Learning"],
         link: "assets/software-project2.pdf",
         image: "assets/images/software/project2.png"
+    },
+    {
+        title: "This Website!",
+        description: "Written from scratch using JavaScript, HTML and CSS. Hosted on github pages.",
+        technologies: ["JavaScript", "HTML", "CSS"],
+        link: "assets/software-project1.pdf",
+        image: "assets/images/software/project1.png"
     },
     {
         title: "Online Card Game",
