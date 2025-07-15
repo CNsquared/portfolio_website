@@ -199,7 +199,7 @@ window.addEventListener('click', e => {
 const bioData = [
     {
         title: "Hi, I'm Alex. A climber and grappler!",
-        description: "Outside of work, I have a passion for rock climbing and brazilian jiu-jitsu. While these sports may seem very different, to me, they are both just physical version of problem solving. Wether its determining the right route up the rock or the right path to a submission, I love a good puzzle and figuring it out."
+        description: "Outside of work, I have a passion for rock climbing and brazilian jiu-jitsu. While these sports may seem very different, to me, they are both just physical version of problem solving. Whether its determining the right route up the rock or the right path to a submission, I love a good puzzle and figuring it out."
     },
     {
         title: "Hi, I'm Alex. A motivated and problem-solving oriented machine learning engineer!",
